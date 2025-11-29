@@ -1,0 +1,300 @@
+/*
+====================================
+  1. Global Reset and Variables
+====================================
+*/
+
+:root {
+    --primary-color: #007BFF; /* A clean, professional blue */
+    --secondary-color: #28A745; /* Green for success/action */
+    --text-color: #333;
+    --light-text-color: #fff;
+    --background-color: #f8f9fa; /* Off-white page background */
+    --surface-color: #ffffff; /* White cards/content background */
+    --border-color: #dee2e6;
+    --font-family: 'Arial', sans-serif;
+    --max-width: 1000px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family);
+    color: var(--text-color);
+    line-height: 1.6;
+    background-color: var(--background-color);
+}
+
+/* Base link styling */
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+/*
+====================================
+  2. Header and Navigation
+====================================
+*/
+
+header {
+    background-color: var(--surface-color);
+    border-bottom: 3px solid var(--primary-color);
+    padding: 20px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+header h1 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+nav ul {
+    list-style: none;
+    text-align: center;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: var(--text-color);
+    padding: 5px 10px;
+    border-bottom: 2px solid transparent; /* Used for hover/active state */
+}
+
+nav ul li a:hover {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+    text-decoration: none;
+}
+
+/* Simple way to indicate the current active page */
+nav ul li a[href*="index.html"]:hover:not([href="index.html"]),
+nav ul li a[href*="projects.html"]:hover:not([href="projects.html"]),
+nav ul li a[href*="articles.html"]:hover:not([href="articles.html"]),
+nav ul li a[href*="contact.html"]:hover:not([href="contact.html"]) {
+    /* Simple hover for non-current links */
+}
+
+/* You would add a class="active" to the current page link manually in each HTML file for a true active state */
+
+/*
+====================================
+  3. Main Content Layout
+====================================
+*/
+
+main {
+    max-width: var(--max-width);
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+section {
+    background-color: var(--surface-color);
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    font-size: 2.2em;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 10px;
+}
+
+h3 {
+    font-size: 1.5em;
+    color: var(--text-color);
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+/*
+====================================
+  4. Specific Page Component Styling
+====================================
+*/
+
+/* 4.1 Homepage Hero */
+#hero {
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+    text-align: center;
+    padding: 50px;
+    border-radius: 8px;
+    box-shadow: 0 6px 10px rgba(0, 123, 255, 0.3);
+}
+
+#hero h2 {
+    color: var(--light-text-color);
+    border-bottom: none;
+}
+
+#hero a {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: var(--light-text-color);
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#hero a:hover {
+    background-color: #218838; /* Darker green */
+}
+
+/* 4.2 Project & Article Cards */
+.project-card, .post-summary {
+    border: 1px solid var(--border-color);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.project-card:hover, .post-summary:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.project-card h3, .post-summary h3 {
+    margin-top: 0;
+    color: var(--primary-color);
+}
+
+time {
+    display: block;
+    font-size: 0.85em;
+    color: #6c757d;
+    margin-bottom: 10px;
+}
+
+/* 4.3 Contact Form */
+#contact-form-section {
+    padding: 40px;
+}
+
+form div {
+    margin-bottom: 15px;
+}
+
+fieldset {
+    border: 1px solid var(--border-color);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+}
+
+legend {
+    font-weight: bold;
+    color: var(--primary-color);
+    padding: 0 10px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 1em;
+    font-family: inherit;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button[type="submit"] {
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/*
+====================================
+  5. Footer
+====================================
+*/
+
+footer {
+    background-color: var(--text-color); /* Dark footer */
+    color: var(--light-text-color);
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 30px;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9em;
+}
+
+footer a {
+    color: var(--primary-color);
+}
+
+/*
+====================================
+  6. Accessibility & Responsiveness (Basic)
+====================================
+*/
+
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 5px 0;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+
+    .project-card, .post-summary {
+        padding: 15px;
+    }
+}

@@ -1,0 +1,240 @@
+:root {
+    --bg: #0f1724;
+    /* dark navy */
+    --card: #0b1220;
+    --muted: #9aa6b2;
+    --accent: #ff4d6d;
+    /* coral accent */
+    --glass: rgba(255, 255, 255, 0.03);
+    --max-width: 900px;
+    color-scheme: dark;
+}
+
+* {
+    box-sizing: border-box
+}
+
+html,
+body {
+    height: 
+}
+
+body {
+    margin: 0;
+    font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    background: linear-gradient(132deg, #000000,#00ff00, #0000ff,#e60073,#ff0000,#ffffff);
+  background-size: 400% 400%;
+  animation: BackgroundGradient 15s ease infinite;
+    color: #E6EEF3;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    padding: 48px 20px;
+    display: flex;
+    justify-content: center;
+}
+@keyframes BackgroundGradient {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+.wrap {
+    width: 100%;
+    max-width: var(--max-width);
+    background: linear-gradient(180deg, rgba(36, 34, 34, 0.996), rgb(42, 41, 41));
+    border-radius: 14px;
+    box-shadow: 0 10px 30px rgba(2, 6, 23, 0.6);
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 28px;
+    padding: 28px;
+}
+
+/* Left column */
+.profile {
+    padding: 12px 8px;
+}
+
+.avatar {
+    width: 100%;
+    border-radius: 10px;
+    aspect-ratio: 1/1;
+    background: linear-gradient(135deg, rgba(255, 77, 109, 0.08), rgba(54, 135, 255, 0.03));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 28px;
+    color: var(--accent);
+    margin-bottom: 14px;
+}
+
+h1 {
+    margin: 6px 0 0 0;
+    font-size: 20px
+}
+
+h2 {
+    font-size: 14px;
+    margin: 18px 0 8px 0;
+    color: var(--muted)
+}
+
+p.lead {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.4
+}
+
+.contact {
+    margin-top: 10px;
+    font-size: 13px
+}
+
+.contact div {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    padding: 6px 0
+}
+
+.pill {
+    background: var(--glass);
+    padding: 6px 10px;
+    border-radius: 8px;
+    font-size: 13px
+}
+ .buttons{
+    margin-bottom: 5px;
+ }
+.skills {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    margin-top: 6px
+}
+
+.skill {
+    background: rgba(255, 255, 255, 0.02);
+    padding: 8px;
+    border-radius: 8px;
+    font-size: 13px
+}
+
+/* Right column */
+.content {
+    padding: 6px 4px
+}
+
+section {
+    margin-bottom: 18px
+}
+
+.section-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+}
+
+.section-head h3 {
+    margin: 0;
+    font-size: 16px
+}
+
+.timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 12px
+}
+
+.job {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.01), rgba(255, 255, 255, 0.00));
+    padding: 12px;
+    border-radius: 10px
+}
+
+.job h4 {
+    margin: 0;
+    font-size: 15px
+}
+
+.meta {
+    font-size: 13px;
+    color: var(--muted);
+    margin-top: 6px
+}
+
+ul.resp {
+    margin: 8px 0 0 18px
+}
+
+.projects {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px
+}
+
+.project {
+    padding: 10px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.01)
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 6px;
+    border-top: 1px dashed rgba(255, 255, 255, 0.02);
+    margin-top: 12px
+}
+
+/* Utilities */
+.btn {
+    background: var(--accent);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 0;
+    cursor: pointer;
+    font-weight: 600
+}
+
+.ghost {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    padding: 8px 10px;
+    border-radius: 8px
+}
+
+/* Responsive */
+@media (max-width:900px) {
+    .wrap {
+        grid-template-columns: 1fr;
+    }
+
+    .avatar {
+        height: 120px
+    }
+}
+
+/* Print style */
+@media print {
+    body {
+        background: white;
+        color: black
+    }
+
+    .wrap {
+        box-shadow: none;
+        border-radius: 0;
+        padding: 0;
+        max-width: 100%
+    }
+
+    .btn,
+    .ghost {
+        display: none
+    }
+}
